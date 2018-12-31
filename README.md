@@ -9,10 +9,10 @@ An utility called 'patchelf',linked with native Android linker,is attached to th
 一个使用了原生安卓链接器、名为"patchelf"的工具，已经附在了GlibC工具包里。  
 You can patch the Native Linux executable files by using the following command(Dynamic libraries are not needed to be patched):  
 您可以使用以下的命令为原生Linux程序制作补丁(动态链接库不需要修补)：  
-<pre><code>patchelf --set-rpath (/path/to/glibc)/lib:(/path/to/glibc)/lib64 YourProgram  
+<pre><code>patchelf --set-rpath (/path/to/glibc)/lib:(/path/to/glibc)/lib64 YourProgram
 patchelf --set-interpreter (/path/to/glibc)/lib/ld-linux-aarch64.so.1 YourProgram</code></pre>  
-NOTE:PLEASE DO NOT SET "LD_LIBRARY_PATH" INSTEAD.IT WILL LET ANDROID LINKER CONFUSED.  
-注意：不要设置“LD_LIBRARY_PATH”变量来代替修补。这样会造成安卓的链接器错误链接。  
+<label style="color: red">NOTE:PLEASE DO NOT SET "LD_LIBRARY_PATH" INSTEAD.IT WILL LET ANDROID LINKER CONFUSED.</label>  
+<label style="color:red">注意：不要设置“LD_LIBRARY_PATH”变量来代替修补。这样会造成安卓的链接器错误链接。</label>  
 You can also compile programs yourself since there are full headers attached.  
 您也可以使用这份GlibC自行编译程序，因为这里有完整的头文件附带。  
 Using your cross-compile chain(tested GCC) with '-L(/path/to/glibc/on/PC) -Wl,-R(/path/to/glibc/on/Android) -Wl,-dynamic-linker=(/path/to/glibc)/lib/ld-linux-aarch64.so.1' command to build.  
