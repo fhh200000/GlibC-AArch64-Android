@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/system/bin/sh
 
 PKGVERSION="(GNU libc) "
 TZVERSION="2.28"
