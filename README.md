@@ -4,7 +4,7 @@ Note that due to the Bionic runtime libraries,you should spicify the linker to l
 注意，因为自带的Bionic运行库造成的干扰，您需要将链接器指定为lib文件夹下的ld-linux-aarch64.so.1。  
 A big advantage is that you can run NATIVE AArch64 Linux softwares with only few changes.  
 一个优势：现在您只需极其少量的操作就可以使为Linux AArch64架构编译的应用程序成功运行。  
-An utility called 'patchelf',linked with native Android linker,is attached to the GlibC.  
+A utility called 'patchelf',linked with native Android linker,is attached to the GlibC.  
 (Source from NixOS:https://nixos.org/patchelf.html)  
 一个使用了原生安卓链接器、名为"patchelf"的工具，已经附在了GlibC工具包里。  
 You can patch the Native Linux executable files by using the following command(Dynamic libraries are not needed to be patched):  
